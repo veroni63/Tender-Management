@@ -36,7 +36,7 @@ const BidSubmission = () => {
 
   return (
     <Container className="p-5 bg-white shadow-sm    ">
-      <h3 className="mb-4 text-center page-title">Bid Submission</h3>
+      <h3 className="mb-4 text-center page-title">Bid submission</h3>
       <Form>
         <Row className="mb-4">
           <Col md={6}>
