@@ -1,0 +1,23 @@
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* Add this to your SCSS file to override the browser's autocomplete background */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border:none; 
+  transition:  5000s ease-in-out 0s; 
+}
+.form-control:disabled{
+  background-color: #f4f7fa;
+  border: none;
+}
