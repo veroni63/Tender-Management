@@ -133,7 +133,6 @@ const TenderForm = () => {
           <Form.Label>Eligibility Criteria</Form.Label>
           <ReactQuill value={eligibilityCriteria} onChange={setEligibilityCriteria} />
         </Form.Group>
-        {console.log(eligibilityCriteria)}
         <Form.Group className="mb-3">
           <Form.Label>Attach Documents</Form.Label>
           <Form.Control type="file" multiple onChange={handleFileChange} />
