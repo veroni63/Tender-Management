@@ -94,6 +94,7 @@ const UserMgDashboard = () => {
         <div className="$primary-color mb-1" style={{ fontSize: '28px', fontWeight: '700' }}>
           User Management
         </div>
+        
         <div className="d-flex justify-content-between mb-4">
           <InputGroup className="mt-4" style={{ maxWidth: '400px', height: '10px' }}>
             <FormControl

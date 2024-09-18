@@ -48,7 +48,7 @@ const TenderManagement = () => {
     description: ''
   });
 
-  // Filter states
+ 
   const [searchText, setSearchText] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
@@ -56,12 +56,12 @@ const TenderManagement = () => {
   const [dateFrom, setDateFrom] = useState(null);
   const [dateTo, setDateTo] = useState(null);
 
-  // Categories and other filter options  
+ 
   const categories = ['Construction', 'IT', 'Healthcare'];
   const statuses = ['Draft', 'Published', 'Closed', 'Cancelled'];
   const types = ['Open', 'Selective', 'Limited'];
 
-  // Handle filtering logic
+
   useEffect(() => {
     const filtered = tenders.filter((tender) => {
       const matchesSearchText = tender.title.toLowerCase().includes(searchText.toLowerCase());
@@ -77,13 +77,12 @@ const TenderManagement = () => {
     setFilteredTenders(filtered);
   }, [searchText, statusFilter, typeFilter, categoryFilter, dateFrom, dateTo, tenders]);
 
-  // Handle form input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  // Handle form submission
+ 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (editingTender) {
@@ -192,7 +191,6 @@ const TenderManagement = () => {
         </Col>
       </Row>
 
-      {/* Tender List Table */}
       <Table className="text-center" bordered responsive>
         <thead>
           <tr>
@@ -215,9 +213,6 @@ const TenderManagement = () => {
               <td>
                 <Button variant="outline-primary" size="sm" className="me-2" onClick={() => handleEdit(tender)}>
                   Edit
-                </Button>
-                <Button variant="outline-danger" size="sm">
-                  Delete
                 </Button>
               </td>
             </tr>

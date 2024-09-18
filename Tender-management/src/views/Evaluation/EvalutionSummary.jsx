@@ -65,7 +65,6 @@ const EvaluationSummary = () => {
         </div>
       </div>
 
-      {/* Bid List Table */}
       <div className="table-responsive">
         <table className="table table-bordered table-hover">
           <thead className="thead-light">
@@ -93,7 +92,7 @@ const EvaluationSummary = () => {
         </table>
       </div>
 
-      {/* Generate Evaluation Report Button */}
+
       <div className="mt-4">
         <button className="btn btn-primary" onClick={generateReport}>
           Generate Evaluation Report
