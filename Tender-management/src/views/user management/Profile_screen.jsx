@@ -13,17 +13,14 @@ const Testing = () => {
     twoFactor: false,
   });
 
-  // New state to hold original values before editing
   const [originalProfileData, setOriginalProfileData] = useState(profileData);
   const [originalProfilePictureUrl, setOriginalProfilePictureUrl] = useState(profilePictureUrl);
 
   const handleEditToggle = () => {
     if (editing) {
-      // Revert to original values if canceling
       setProfileData(originalProfileData);
       setProfilePictureUrl(originalProfilePictureUrl);
     } else {
-      // Save the current values before entering edit mode
       setOriginalProfileData(profileData);
       setOriginalProfilePictureUrl(profilePictureUrl);
     }
@@ -55,32 +52,50 @@ const Testing = () => {
   };
 
   return (
-    <Container className="bg-white p-5" style={{ width: '900px' }}>
+    <Container
+      className="p-4 bg-white shadow-sm"
+      style={{ width: "900px" }}
+    >
       <Row>
-        <Col md={4} className="text-center">
+        <Col md={4} className="text-center mt-4">
           <h3 className="pb-1" style={{ fontWeight: 700 }}>
             User Profile
           </h3>
           <Image
-            src={profilePictureUrl || 'https://via.placeholder.com/100'}
+            src={profilePictureUrl || "https://via.placeholder.com/100"}
             roundedCircle
             width="150"
             height="150"
             className="mb-3 ms-5 mt-3"
-            style={{ display: 'block', marginLeft: '10px' }}
+            style={{ display: "block", marginLeft: "10px" }}
             alt="Profile"
           />
 
-          <Form.Control type="file" onChange={handleProfilePictureChange} disabled={!editing} className="d-none" id="profilePictureInput" />
+          <Form.Control
+            type="file"
+            onChange={handleProfilePictureChange}
+            disabled={!editing}
+            className="d-none"
+            id="profilePictureInput"
+          />
 
           {editing && (
-            <label htmlFor="profilePictureInput" style={{ background: 'white', color: 'black' }} className="btn btn-primary">
+            <label
+              htmlFor="profilePictureInput"
+              style={{ background: "white", color: "black" }}
+              className="btn btn-primary"
+            >
               Choose File
             </label>
           )}
           <div className="mt-3">
-            <Button variant="primary" className="mx-4" style={{ marginLeft: '86px' }} onClick={handleEditToggle}>
-              {editing ? 'Cancel' : 'Add Details or Profile'}
+            <Button
+              variant="primary"
+              className="mx-4"
+              style={{ marginLeft: "86px" }}
+              onClick={handleEditToggle}
+            >
+              {editing ? "Cancel" : "Add Details or Profile"}
             </Button>
             {editing && (
               <Button variant="success" className="mx-4" onClick={handleSave}>
@@ -94,10 +109,13 @@ const Testing = () => {
           <Form.Group className="mb-3">
             <Form.Label>Two-Factor Authentication</Form.Label>
             <ToggleButtonGroup
+              className="mb-3"
               type="radio"
               name="twoFactor"
               value={profileData.twoFactor}
-              onChange={(val) => setProfileData({ ...profileData, twoFactor: val })}
+              onChange={(val) =>
+                setProfileData({ ...profileData, twoFactor: val })
+              }
             >
               <ToggleButton value={true} disabled={!editing}>
                 Enable
@@ -108,19 +126,31 @@ const Testing = () => {
             </ToggleButtonGroup>
           </Form.Group>
         </Col>
-        <Col md={8} style={{ marginTop: '-13px' }}>
+        <Col md={8} >
           <Form>
             <Row>
-              <Col>
-                <Form.Group className="mb-3">
+              <Col sm>
+                <Form.Group className="mb-3 ">
                   <Form.Label>First Name</Form.Label>
-                  <Form.Control type="text" name="firstName" value={profileData.firstName} onChange={handleChange} disabled={!editing} />
+                  <Form.Control
+                    type="text"
+                    name="firstName"
+                    value={profileData.firstName}
+                    onChange={handleChange}
+                    disabled={!editing}
+                  />
                 </Form.Group>
               </Col>
               <Col>
                 <Form.Group className="mb-3">
                   <Form.Label>Last Name</Form.Label>
-                  <Form.Control type="text" name="lastName" value={profileData.lastName} onChange={handleChange} disabled={!editing} />
+                  <Form.Control
+                    type="text"
+                    name="lastName"
+                    value={profileData.lastName}
+                    onChange={handleChange}
+                    disabled={!editing}
+                  />
                 </Form.Group>
               </Col>
             </Row>
@@ -132,17 +162,35 @@ const Testing = () => {
 
             <Form.Group className="mb-3">
               <Form.Label>Phone Number</Form.Label>
-              <Form.Control type="tel" name="phone" value={profileData.phone} onChange={handleChange} disabled={!editing} />
+              <Form.Control
+                type="tel"
+                name="phone"
+                value={profileData.phone}
+                onChange={handleChange}
+                disabled={!editing}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Job Title</Form.Label>
-              <Form.Control type="text" name="jobTitle" value={profileData.jobTitle} onChange={handleChange} disabled={!editing} />
+              <Form.Control
+                type="text"
+                name="jobTitle"
+                value={profileData.jobTitle}
+                onChange={handleChange}
+                disabled={!editing}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Department</Form.Label>
-              <Form.Control type="text" name="department" value={profileData.department} onChange={handleChange} disabled={!editing} />
+              <Form.Control
+                type="text"
+                name="department"
+                value={profileData.department}
+                onChange={handleChange}
+                disabled={!editing}
+              />
             </Form.Group>
           </Form>
         </Col>

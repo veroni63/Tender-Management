@@ -36,17 +36,17 @@ const EvaluationSummary = () => {
   };
 
   return (
-    <div className="container mt-4">
-      <h2 className="mb-4">Evaluation Summary</h2>
-
+    <div className="p-3 shadow-lg  bg-white">
+      <h2 className="mb-4 page-title">Evaluation Summary</h2>
 
       <div className="mb-3">
-        <strong>Tender Title:</strong> <span className="text-muted">Project ABC</span>
+        <strong>Tender Title:</strong>{" "}
+        <span className="text-muted">Project ABC</span>
       </div>
 
-
       <div className="mb-3">
-        <strong>Number of Bids:</strong> <span className="text-muted">{bids.length}</span>
+        <strong>Number of Bids:</strong>{" "}
+        <span className="text-muted">{bids.length}</span>
       </div>
 
       <div className="mb-4">
@@ -92,8 +92,7 @@ const EvaluationSummary = () => {
         </table>
       </div>
 
-
-      <div className="mt-4">
+      <div className="mt-4 text-center">
         <button className="btn btn-primary" onClick={generateReport}>
           Generate Evaluation Report
         </button>

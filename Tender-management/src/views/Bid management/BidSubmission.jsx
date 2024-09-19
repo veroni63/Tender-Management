@@ -35,40 +35,40 @@ const BidSubmission = () => {
   };
 
   return (
-    <Container className="p-5 bg-white shadow-sm    ">
-      <h3 className="mb-4 text-center page-title">Bid submission</h3>
+    <Container className="p-4 bg-white shadow-sm    ">
+      <h3 className="mb-4 text-center page-title">Bid Submission</h3>
       <Form>
-        <Row className="mb-4">
-          <Col md={6}>
+        <Row>
+          <Col className="mb-3" md={6}>
             <Form.Group controlId="formTenderReference">
               <Form.Label>Tender Reference</Form.Label>
               <Select
                 value={tenderReference}
                 onChange={handleTenderReferenceChange}
                 options={[
-                  { value: 'tender1', label: 'Tender 1' },
-                  { value: 'tender2', label: 'Tender 2' }
+                  { value: "tender1", label: "Tender 1" },
+                  { value: "tender2", label: "Tender 2" },
                 ]}
                 isSearchable
                 placeholder="Select Tender Reference"
               />
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group controlId="formBidTitle">
               <Form.Label>Bid Title</Form.Label>
               <Form.Control type="text" placeholder="Enter Bid Title" />
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-4">
-          <Col md={6}>
+        <Row>
+          <Col className="mb-3" md={6}>
             <Form.Group controlId="formBidAmount">
               <Form.Label>Bid Amount</Form.Label>
               <Form.Control type="number" placeholder="Enter Bid Amount" />
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group controlId="formCurrency">
               <Form.Label>Currency</Form.Label>
               <Form.Control as="select">
@@ -79,12 +79,12 @@ const BidSubmission = () => {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-4">
-          <Col md={6}>
+        <Row>
+          <Col className="mb-3" md={6}>
             <Form.Group controlId="formDeliveryTimeline">
               <Form.Label>Delivery Timeline</Form.Label>
               <Row>
-                <Col md={8}>
+                <Col className="mb-3" md={8}>
                   <Form.Control type="number" placeholder="Enter timeline" />
                 </Col>
                 <Col md={4}>
@@ -97,21 +97,21 @@ const BidSubmission = () => {
               </Row>
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group controlId="formCertifications">
               <Form.Label>Technical Proposal</Form.Label>
               <Form.Control type="file" multiple />
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-4">
-          <Col md={6}>
+        <Row>
+          <Col className="mb-3" md={6}>
             <Form.Group controlId="formCertifications">
               <Form.Label>Financial Proposal</Form.Label>
               <Form.Control type="file" multiple />
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group controlId="formCertifications">
               <Form.Label>Additional Documents</Form.Label>
               <Form.Control type="file" multiple />
@@ -119,11 +119,16 @@ const BidSubmission = () => {
           </Col>
         </Row>
         {/* Compliance Checklist (dynamic checklist based on tender requirements) */}
-        <Row className="mb-4 ">
-          <Col md={12}>
+        <Row>
+          <Col className="mb-3" md={12}>
             <Form.Group className="mb-3">
               <Form.Label>Compliance ** </Form.Label>
-              <Form.Select name="status" value={formData.status} onChange={handleChange} required>
+              <Form.Select
+                name="status"
+                value={formData.status}
+                onChange={handleChange}
+                required
+              >
                 <option value="">Select Status</option>
                 <option value="compliant">Compliant</option>
                 <option value="non-compliant">Non-Compliant</option>
@@ -132,18 +137,22 @@ const BidSubmission = () => {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-4">
-          <Col md={12}>
+        <Row>
+          <Col className="mb-3" md={12}>
             <Form.Group controlId="formDeclarationOfCompliance">
               <Form.Check type="checkbox" label="Declaration of Compliance" />
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-4">
-          <Col md={12}>
+        <Row>
+          <Col className="mb-3" md={12}>
             <Form.Group controlId="formNotesComments">
               <Form.Label>Notes/Comments</Form.Label>
-              <Form.Control as="textarea" rows={4} placeholder="Enter your comments" />
+              <Form.Control
+                as="textarea"
+                rows={4}
+                placeholder="Enter your comments"
+              />
             </Form.Group>
           </Col>
         </Row>

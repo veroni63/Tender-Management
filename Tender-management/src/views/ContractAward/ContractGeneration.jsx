@@ -12,8 +12,8 @@ function ContractGeneration() {
     <div>
       <Container className="p-4 shadow-lg rounded bg-white">
         <h2 className="page-title mb-3"> Contract Generation Screen </h2>
-        <Row className="mb-3 ">
-          <Col md={4}>
+        <Row>
+          <Col className="mb-3" md={4}>
             <Form.Group className="text-start">
               <Form.Label> Contract Template </Form.Label>
               <Form.Control as="select">
@@ -23,13 +23,13 @@ function ContractGeneration() {
               </Form.Control>
             </Form.Group>
           </Col>
-          <Col md={4}>
+          <Col className="mb-3" md={4}>
             <Form.Group className="text-start">
               <Form.Label>Vendor Name</Form.Label>
               <Form.Control type="text" placeholder={"vendor name"} readOnly />
             </Form.Group>
           </Col>
-          <Col md={4}>
+          <Col className="mb-3" md={4}>
             <Form.Group className="text-center">
               <Form.Label>Date Range</Form.Label>
               <Row>
@@ -53,8 +53,8 @@ function ContractGeneration() {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-3">
-          <Col md={6}>
+        <Row>
+          <Col className="mb-3" md={6}>
             <Form.Group>
               <Form.Label>Contract Value</Form.Label>
               <Form.Control
@@ -63,7 +63,7 @@ function ContractGeneration() {
               />
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group className="text-start">
               <Form.Label>Tender Reference </Form.Label>
               <Form.Control type="text" placeholder={"Ref12334"} />
@@ -82,7 +82,7 @@ function ContractGeneration() {
           </Form.Group>
         </Row>
         <div className="text-center">
-          <Button> Generate Contract Draft </Button>
+          <Button className="mb-3"> Generate Contract Draft </Button>
           <Button>Send for Vendor Review</Button>
         </div>
       </Container>

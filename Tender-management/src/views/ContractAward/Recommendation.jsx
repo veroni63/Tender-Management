@@ -5,23 +5,23 @@ function Recommendation() {
   return (
     <>
       <Container className="p-4 shadow-lg rounded bg-white">
-        <h2 className="page-title mb-3"> Award Recommendation Screen </h2>
-        <Row className="mb-3">
-          <Col md={6}>
+        <h2 className="page-title mb-3"> Award Recommendation</h2>
+        <Row>
+          <Col className="mb-3" md={6}>
             <Form.Group>
               <Form.Label>Tender Reference </Form.Label>
               <Form.Control type="text" placeholder="Ref2323" readOnly />
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group>
               <Form.Label>Recommended Vendor</Form.Label>
               <Form.Control type="text" placeholder={"Recommended"} readOnly />
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-3">
-          <Col md={6}>
+        <Row>
+          <Col className="mb-3" md={6}>
             <Form.Group>
               <Form.Label>Bid Amount </Form.Label>
               <Form.Control
@@ -31,7 +31,7 @@ function Recommendation() {
               />
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group>
               <Form.Label>Attach Supporting Documents</Form.Label>
               <Form.Control
@@ -43,8 +43,8 @@ function Recommendation() {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-3">
-          <Col md={12}>
+        <Row>
+          <Col className="mb-3" md={12}>
             <Form.Group controlId="formNotesComments">
               <Form.Label>Justification for Selection </Form.Label>
               <Form.Control as="textarea" rows={4} placeholder="Text Area" />

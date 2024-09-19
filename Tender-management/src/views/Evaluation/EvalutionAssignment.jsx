@@ -15,10 +15,10 @@ function EvalutionAssignment() {
   ]);
   return (
     <>
-      <Container className="p-4 shadow-lg rounded bg-white">
-        <h2 className="page-title">Evaluator Assignment Screen</h2>
+      <Container className="p-3 shadow-lg rounded bg-white">
+        <h2 className="page-title mb-4">Evaluator Assignment Screen</h2>
         <Row>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group>
               <Form.Label className="mb-2">Tender Reference</Form.Label>
               <Form.Control
@@ -33,7 +33,7 @@ function EvalutionAssignment() {
               </Form.Control>
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group controlId="formIndustrySectors">
               <Form.Label>Available Evaluators</Form.Label>
               <Select

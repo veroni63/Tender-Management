@@ -7,17 +7,17 @@ function ContractSigning() {
         <h2 className="page-title mb-4">Contract Signing Screen </h2>
         {/* <iframe src=''/>
         <a href=''></a> */}
-        <Row className="mb-3">
-          <Col md={6}>
+        <Row>
+          <Col className="mb-3" md={6}>
             <Form.Group>
-              <Form.Label>Procurement Authority Signatory Name </Form.Label>
+              <Form.Label>Procurement Authority Signatory </Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Procurement Authority Signatory Name "
               />
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group>
               <Form.Label>Vendor Signatory Title</Form.Label>
               <Form.Control
@@ -27,19 +27,19 @@ function ContractSigning() {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-3">
-          <Col md={6}>
+        <Row>
+          <Col className="mb-3" md={6}>
             <Form.Group>
-              <Form.Label>Procurement Authority Signatory Name </Form.Label>
+              <Form.Label>Procurement Authority Signatory </Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Procurement Authority Signatory Name "
               />
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col className="mb-3" md={6}>
             <Form.Group>
-              <Form.Label>Procurement Authority Signatory Title</Form.Label>
+              <Form.Label>Procurement Authority Signatory </Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Procurement Authority Signatory Title"
@@ -47,8 +47,8 @@ function ContractSigning() {
             </Form.Group>
           </Col>
         </Row>
-        <div className='text-center'>
-          <Button>Sign Contract </Button>
+        <div className="text-center">
+          <Button className="mb-3">Sign Contract </Button>
           <Button>Finalize Contract</Button>
         </div>
       </Container>

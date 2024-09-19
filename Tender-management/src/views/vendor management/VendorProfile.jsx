@@ -43,37 +43,57 @@ const VendorDetails = () => {
   };
 
   return (
-    <Container className="mt-4 ">
-      <h2 className="text-center page-title">Vendor Details</h2>
+    <Container className="p-3 shadow-lg rounded bg-white">
+      <h2 className="text-center  page-title">Vendor Profile</h2>
 
-      <Card className="mb-4">
+      <Card className="mb-3">
         <Card.Body>
           <Form>
-            <Row className="mb-3">
-              <Col md={6}>
+            <Row>
+              <Col className="mb-3" md={6}>
                 <Form.Group controlId="formVendorName">
                   <Form.Label>Company Name</Form.Label>
-                  <Form.Control type="text" name="name" value={vendor.name} onChange={handleInputChange} />
+                  <Form.Control
+                    type="text"
+                    name="name"
+                    value={vendor.name}
+                    onChange={handleInputChange}
+                  />
                 </Form.Group>
               </Col>
-              <Col md={6}>
+              <Col className="mb-3" md={6}>
                 <Form.Group controlId="formVendorIndustry">
                   <Form.Label>Industry</Form.Label>
-                  <Form.Control type="text" name="industry" value={vendor.industry} onChange={handleInputChange} />
+                  <Form.Control
+                    type="text"
+                    name="industry"
+                    value={vendor.industry}
+                    onChange={handleInputChange}
+                  />
                 </Form.Group>
               </Col>
             </Row>
-            <Row className="mb-3">
-              <Col md={6}>
+            <Row>
+              <Col className="mb-3" md={6}>
                 <Form.Group controlId="formVendorSize">
                   <Form.Label>Company Size</Form.Label>
-                  <Form.Control type="text" name="size" value={vendor.size} onChange={handleInputChange} />
+                  <Form.Control
+                    type="text"
+                    name="size"
+                    value={vendor.size}
+                    onChange={handleInputChange}
+                  />
                 </Form.Group>
               </Col>
-              <Col md={6}>
+              <Col className="mb-3" md={6}>
                 <Form.Group controlId="formVendorStatus">
                   <Form.Label>Status</Form.Label>
-                  <Form.Control type="text" name="status" value={vendor.status} onChange={handleInputChange} />
+                  <Form.Control
+                    type="text"
+                    name="status"
+                    value={vendor.status}
+                    onChange={handleInputChange}
+                  />
                 </Form.Group>
               </Col>
             </Row>
@@ -87,7 +107,10 @@ const VendorDetails = () => {
           <h5>Vendor Rating</h5>
           <div>
             {Array.from({ length: 5 }, (_, i) => (
-              <span key={i} className={i < vendor.rating ? 'text-warning' : 'text-muted'}>
+              <span
+                key={i}
+                className={i < vendor.rating ? "text-warning" : "text-muted"}
+              >
                 ★
               </span>
             ))}
@@ -95,7 +118,7 @@ const VendorDetails = () => {
         </Card.Body>
       </Card>
 
-      {/* Performance Metrics */}
+
       <Card className="mb-4">
         <Card.Body>
           <h5>Performance Metrics</h5>
@@ -103,11 +126,11 @@ const VendorDetails = () => {
         </Card.Body>
       </Card>
 
-      {/* Past Bids Table */}
+ 
       <Card className="mb-4">
         <Card.Body>
           <h5>Past Bids</h5>
-          <Table  bordered >
+          <Table responsive bordered>
             <thead>
               <tr>
                 <th>Tender Title</th>
@@ -132,7 +155,7 @@ const VendorDetails = () => {
       <Card className="mb-4">
         <Card.Body>
           <h5>Awarded Contracts</h5>
-          <Table bordered >
+          <Table responsive bordered>
             <thead>
               <tr>
                 <th>Contract Title</th>

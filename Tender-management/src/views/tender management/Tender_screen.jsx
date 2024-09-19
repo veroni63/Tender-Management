@@ -18,7 +18,6 @@ const TenderForm = () => {
     { value: 'construction', label: 'Construction' },
     { value: 'it', label: 'IT' },
     { value: 'healthcare', label: 'Healthcare' }
-    // Add more categories as needed
   ];
 
   const handleFileChange = (event) => {
@@ -85,7 +84,7 @@ const TenderForm = () => {
 
         <Row>
           <Col md={3}>
-            <Form.Group className="mb-3 text-center">
+            <Form.Group className="mb-3">
               <Form.Label>Publication Date</Form.Label>
               <br></br>
               <DatePicker
@@ -98,7 +97,7 @@ const TenderForm = () => {
             </Form.Group>
           </Col>
           <Col md={3}>
-            <Form.Group style={{ marginLeft: '-3px' }} className="mb-3 text-center ">
+            <Form.Group style={{ marginLeft: '-3px' }} className="mb-3  ">
               <Form.Label>Submission Deadline</Form.Label>
               <br></br>
               <DatePicker

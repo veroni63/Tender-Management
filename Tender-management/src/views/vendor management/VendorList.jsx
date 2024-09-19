@@ -63,18 +63,32 @@ const VendorManagement = () => {
     <div className="container mt-4 text-center">
       <h2 className="page-title mb-4">Vendor List</h2>
       <Row className="mb-3">
-        <Col md={3}>
-          <FormControl placeholder="Search Vendors" value={searchTerm} onChange={handleSearchChange} />
+        <Col className="mb-3" md={3}>
+          <FormControl
+            placeholder="Search Vendors"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
         </Col>
-        <Col md={3}>
-          <Form.Control as="select" name="industry" onChange={handleFilterChange} value={filters.industry}>
+        <Col className="mb-3" md={3}>
+          <Form.Control
+            as="select"
+            name="industry"
+            onChange={handleFilterChange}
+            value={filters.industry}
+          >
             <option value="">Filter by Industry</option>
             <option value="IT">IT</option>
             <option value="Finance">Finance</option>
           </Form.Control>
         </Col>
-        <Col md={3}>
-          <Form.Control as="select" name="size" onChange={handleFilterChange} value={filters.size}>
+        <Col className="mb-3" md={3}>
+          <Form.Control
+            as="select"
+            name="size"
+            onChange={handleFilterChange}
+            value={filters.size}
+          >
             <option value="">Filter by Company Size</option>
             <option value="Small">Small</option>
             <option value="Medium">Medium</option>
@@ -82,7 +96,12 @@ const VendorManagement = () => {
           </Form.Control>
         </Col>
         <Col md={3}>
-          <Form.Control as="select" name="rating" onChange={handleFilterChange} value={filters.rating}>
+          <Form.Control
+            as="select"
+            name="rating"
+            onChange={handleFilterChange}
+            value={filters.rating}
+          >
             <option value="">Filter by Rating</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -113,10 +132,16 @@ const VendorManagement = () => {
               <td>{vendor.rating}</td>
               <td>{vendor.status}</td>
               <td>
-                <Button variant="outline-primary" onClick={() => handleEdit(vendor)}>
+                <Button
+                  variant="outline-primary"
+                  onClick={() => handleEdit(vendor)}
+                >
                   <FaEdit />
-                </Button>{' '}
-                <Button variant="outline-danger" onClick={() => handleDelete(vendor.id)}>
+                </Button>{" "}
+                <Button
+                  variant="outline-danger"
+                  onClick={() => handleDelete(vendor.id)}
+                >
                   <FaTrashAlt />
                 </Button>
               </td>
@@ -125,13 +150,19 @@ const VendorManagement = () => {
         </tbody>
       </Table>
 
-      <Button variant="primary" onClick={() => setShowModal(true)} className="mt-3">
+      <Button
+        variant="primary"
+        onClick={() => setShowModal(true)}
+        className="mt-3"
+      >
         Add New Vendor
       </Button>
 
       <Modal show={showModal} onHide={resetModal}>
         <Modal.Header closeButton>
-          <Modal.Title>{isEditMode ? 'Edit Vendor' : 'Add New Vendor'}</Modal.Title>
+          <Modal.Title>
+            {isEditMode ? "Edit Vendor" : "Add New Vendor"}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -141,12 +172,19 @@ const VendorManagement = () => {
                 type="text"
                 placeholder="Enter company name"
                 value={newVendor.name}
-                onChange={(e) => setNewVendor({ ...newVendor, name: e.target.value })}
+                onChange={(e) =>
+                  setNewVendor({ ...newVendor, name: e.target.value })
+                }
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formVendorIndustry">
               <Form.Label>Industry</Form.Label>
-              <Form.Select value={newVendor.industry} onChange={(e) => setNewVendor({ ...newVendor, industry: e.target.value })}>
+              <Form.Select
+                value={newVendor.industry}
+                onChange={(e) =>
+                  setNewVendor({ ...newVendor, industry: e.target.value })
+                }
+              >
                 <option value="">Select Industry</option>
                 <option value="IT">IT</option>
                 <option value="Finance">Finance</option>
@@ -154,7 +192,12 @@ const VendorManagement = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formVendorSize">
               <Form.Label>Company Size</Form.Label>
-              <Form.Select value={newVendor.size} onChange={(e) => setNewVendor({ ...newVendor, size: e.target.value })}>
+              <Form.Select
+                value={newVendor.size}
+                onChange={(e) =>
+                  setNewVendor({ ...newVendor, size: e.target.value })
+                }
+              >
                 <option value="">Select Size</option>
                 <option value="Small">Small</option>
                 <option value="Medium">Medium</option>
@@ -163,7 +206,12 @@ const VendorManagement = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formVendorRating">
               <Form.Label>Rating</Form.Label>
-              <Form.Select value={newVendor.rating} onChange={(e) => setNewVendor({ ...newVendor, rating: Number(e.target.value) })}>
+              <Form.Select
+                value={newVendor.rating}
+                onChange={(e) =>
+                  setNewVendor({ ...newVendor, rating: Number(e.target.value) })
+                }
+              >
                 <option value="0">Select Rating</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -179,7 +227,7 @@ const VendorManagement = () => {
             Close
           </Button>
           <Button variant="primary" onClick={handleAddVendor}>
-            {isEditMode ? 'Save Changes' : 'Add Vendor'}
+            {isEditMode ? "Save Changes" : "Add Vendor"}
           </Button>
         </Modal.Footer>
       </Modal>

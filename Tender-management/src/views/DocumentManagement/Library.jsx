@@ -73,8 +73,8 @@ function Library() {
       <Container className="p-4 shadow-lg rounded bg-white">
         <h2 className="page-title mb-4">Document Library Screen</h2>
         <Form>
-          <Row className="mb-3">
-            <Col md={3}>
+          <Row>
+            <Col className="mb-3" md={3}>
               <Form.Group>
                 <Form.Label>Search Documents</Form.Label>
                 <Form.Control
@@ -86,7 +86,7 @@ function Library() {
               </Form.Group>
             </Col>
 
-            <Col md={2}>
+            <Col className="mb-3" md={2}>
               <Form.Group>
                 <Form.Label>Type</Form.Label>
                 <Form.Control
@@ -101,7 +101,7 @@ function Library() {
               </Form.Group>
             </Col>
 
-            <Col md={2}>
+            <Col className="mb-3" md={2}>
               <Form.Group>
                 <Form.Label>Category</Form.Label>
                 <Form.Control
@@ -115,7 +115,7 @@ function Library() {
                 </Form.Control>
               </Form.Group>
             </Col>
-            <Col md={2}>
+            <Col className="mb-3" md={2}>
               <Form.Group>
                 <Form.Label>Visibility</Form.Label>
                 <Form.Control
@@ -129,7 +129,7 @@ function Library() {
                 </Form.Control>
               </Form.Group>
             </Col>
-            <Col md={3}>
+            <Col className="mb-3" md={3}>
               <Form.Group className="text-center">
                 <Form.Label>Date Range</Form.Label>
                 <Row>
@@ -157,7 +157,7 @@ function Library() {
           </Row>
         </Form>
 
-        <Table bordered>
+        <Table responsive bordered>
           <thead>
             <tr>
               <th>Title</th>

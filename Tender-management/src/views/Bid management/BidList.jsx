@@ -122,30 +122,46 @@ const BidListScreen = () => {
   };
 
   return (
-    <Container className="p-4 bg-white rounded text-center" style={{ maxWidth: '1100px', margin: '0 auto' }}>
+    <Container
+      className="p-4 bg-white rounded text-center"
+      style={{ maxWidth: "1100px", margin: "0 auto" }}
+    >
       <h2 className="mb-4 page-title">Bid List</h2>
 
       <Row className="mb-3">
-        <Col md={3}>
+        <Col className="mb-3" md={3}>
           <Form.Group className="text-start">
             <Form.Label>Search by Bid Title</Form.Label>
-            <Form.Control type="text" placeholder="Search by Bid Title" value={searchTerm} onChange={handleInputChange} />
+            <Form.Control
+              type="text"
+              placeholder="Search by Bid Title"
+              value={searchTerm}
+              onChange={handleInputChange}
+            />
           </Form.Group>
         </Col>
-        <Col md={3}>
+        <Col className="mb-3" md={3}>
           <Form.Group className="text-start">
             <Form.Label>Search by Bid Title</Form.Label>
-            <Form.Control as="select" value={statusFilter} onChange={handleStatusChange}>
+            <Form.Control
+              as="select"
+              value={statusFilter}
+              onChange={handleStatusChange}
+            >
               <option value="">Filter by Status</option>
               <option value="Open">Open</option>
               <option value="Closed">Closed</option>
             </Form.Control>
           </Form.Group>
         </Col>
-        <Col md={3}>
+        <Col className="mb-3" md={3}>
           <Form.Group className="text-start">
             <Form.Label>Filter by Tender Type</Form.Label>
-            <Form.Control as="select" value={typeFilter} onChange={handleTypeChange}>
+            <Form.Control
+              as="select"
+              value={typeFilter}
+              onChange={handleTypeChange}
+            >
               <option value="">Filter by Tender Type</option>
               <option value="Open">Open</option>
               <option value="Selective">Selective</option>
@@ -153,15 +169,25 @@ const BidListScreen = () => {
             </Form.Control>
           </Form.Group>
         </Col>
-        <Col md={3}>
+        <Col className="mb-3"  md={3}>
           <Form.Group className="text-center">
             <Form.Label>Date Range</Form.Label>
             <Row>
               <Col>
-                <DatePicker selected={fromDate} onChange={(date) => setFromDate(date)} placeholderText="From" className="form-control" />
+                <DatePicker
+                  selected={fromDate}
+                  onChange={(date) => setFromDate(date)}
+                  placeholderText="From"
+                  className="form-control"
+                />
               </Col>
               <Col>
-                <DatePicker selected={toDate} onChange={(date) => setToDate(date)} placeholderText="To" className="form-control" />
+                <DatePicker
+                  selected={toDate}
+                  onChange={(date) => setToDate(date)}
+                  placeholderText="To"
+                  className="form-control"
+                />
               </Col>
             </Row>
           </Form.Group>
@@ -188,13 +214,25 @@ const BidListScreen = () => {
               <td>{bid.status}</td>
               <td>{bid.tenderType}</td>
               <td>
-                <Button variant="outline-primary" size="sm" onClick={() => handleViewBid(bid)}>
+                <Button
+                  variant="outline-primary"
+                  size="sm"
+                  onClick={() => handleViewBid(bid)}
+                >
                   View
-                </Button>{' '}
-                <Button variant="outline-success" size="sm" onClick={() => handleEditBid(bid)}>
+                </Button>{" "}
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  onClick={() => handleEditBid(bid)}
+                >
                   Edit
-                </Button>{' '}
-                <Button variant="outline-danger" size="sm" onClick={() => handleDeleteBid(bid)}>
+                </Button>{" "}
+                <Button
+                  variant="outline-danger"
+                  size="sm"
+                  onClick={() => handleDeleteBid(bid)}
+                >
                   Delete
                 </Button>
               </td>
@@ -206,7 +244,7 @@ const BidListScreen = () => {
       {/* Modal for Viewing/Editing */}
       <Modal show={showModal} onHide={handleModalClose} centered>
         <Modal.Header closeButton>
-          <Modal.Title>{isEditing ? 'Edit Bid' : 'View Bid'}</Modal.Title>
+          <Modal.Title>{isEditing ? "Edit Bid" : "View Bid"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {isEditing ? (
@@ -216,7 +254,9 @@ const BidListScreen = () => {
                 <Form.Control
                   type="text"
                   value={selectedBid?.title}
-                  onChange={(e) => setSelectedBid({ ...selectedBid, title: e.target.value })}
+                  onChange={(e) =>
+                    setSelectedBid({ ...selectedBid, title: e.target.value })
+                  }
                 />
               </Form.Group>
 
@@ -225,13 +265,23 @@ const BidListScreen = () => {
                 <Form.Control
                   type="text"
                   value={selectedBid?.refNumber}
-                  onChange={(e) => setSelectedBid({ ...selectedBid, refNumber: e.target.value })}
+                  onChange={(e) =>
+                    setSelectedBid({
+                      ...selectedBid,
+                      refNumber: e.target.value,
+                    })
+                  }
                 />
               </Form.Group>
 
               <Form.Group className="mb-3">
                 <Form.Label>Status</Form.Label>
-                <Form.Select value={selectedBid?.status} onChange={(e) => setSelectedBid({ ...selectedBid, status: e.target.value })}>
+                <Form.Select
+                  value={selectedBid?.status}
+                  onChange={(e) =>
+                    setSelectedBid({ ...selectedBid, status: e.target.value })
+                  }
+                >
                   <option value="Open">Open</option>
                   <option value="Closed">Closed</option>
                 </Form.Select>
@@ -241,7 +291,12 @@ const BidListScreen = () => {
                 <Form.Label>Tender Type</Form.Label>
                 <Form.Select
                   value={selectedBid?.tenderType}
-                  onChange={(e) => setSelectedBid({ ...selectedBid, tenderType: e.target.value })}
+                  onChange={(e) =>
+                    setSelectedBid({
+                      ...selectedBid,
+                      tenderType: e.target.value,
+                    })
+                  }
                 >
                   <option value="Open">Open</option>
                   <option value="Selective">Selective</option>
@@ -259,7 +314,8 @@ const BidListScreen = () => {
                 <strong>Tender Reference:</strong> {selectedBid?.refNumber}
               </p>
               <p>
-                <strong>Submission Date:</strong> {selectedBid?.submissionDate.toLocaleDateString()}
+                <strong>Submission Date:</strong>{" "}
+                {selectedBid?.submissionDate.toLocaleDateString()}
               </p>
               <p>
                 <strong>Status:</strong> {selectedBid?.status}

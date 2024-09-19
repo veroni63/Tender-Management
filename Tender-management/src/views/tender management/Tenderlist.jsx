@@ -111,21 +111,33 @@ const TenderManagement = () => {
   };
 
   return (
-    <Container className="p-4 bg-white rounded " style={{ maxWidth: '1100px', margin: '0 auto' }}>
+    <Container
+      className="p-4 bg-white rounded "
+      style={{ maxWidth: "1100px", margin: "0 auto" }}
+    >
       <h2 className="mb-4 text-center page-title">Tender List</h2>
 
       <Row className="mb-3">
-        <Col md={3}>
+        <Col className="mb-3" md={3}>
           <Form.Group>
             <Form.Label className="text-center">Search Tenders</Form.Label>
-            <Form.Control type="text" placeholder="Enter tender title" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+            <Form.Control
+              type="text"
+              placeholder="Enter tender title"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+            />
           </Form.Group>
         </Col>
 
-        <Col md={2}>
+        <Col className="mb-3" md={2}>
           <Form.Group>
             <Form.Label>Status</Form.Label>
-            <Form.Control as="select" value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
+            <Form.Control
+              as="select"
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+            >
               <option value="">All Status</option>
               {statuses.map((status) => (
                 <option key={status} value={status}>
@@ -136,10 +148,14 @@ const TenderManagement = () => {
           </Form.Group>
         </Col>
 
-        <Col md={2}>
+        <Col className="mb-3" md={2}>
           <Form.Group>
             <Form.Label>Type</Form.Label>
-            <Form.Control as="select" value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)}>
+            <Form.Control
+              as="select"
+              value={typeFilter}
+              onChange={(e) => setTypeFilter(e.target.value)}
+            >
               <option value="">All Types</option>
               {types.map((type) => (
                 <option key={type} value={type}>
@@ -150,10 +166,14 @@ const TenderManagement = () => {
           </Form.Group>
         </Col>
 
-        <Col md={2}>
+        <Col className="mb-3" md={2}>
           <Form.Group>
             <Form.Label>Category</Form.Label>
-            <Form.Control as="select" value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
+            <Form.Control
+              as="select"
+              value={categoryFilter}
+              onChange={(e) => setCategoryFilter(e.target.value)}
+            >
               <option value="">All Categories</option>
               {categories.map((category) => (
                 <option key={category} value={category}>
@@ -164,7 +184,7 @@ const TenderManagement = () => {
           </Form.Group>
         </Col>
 
-        <Col md={3}>
+        <Col className="mb-3" md={3}>
           <Form.Group className="text-center">
             <Form.Label>Date Range</Form.Label>
             <Row>
@@ -191,7 +211,7 @@ const TenderManagement = () => {
         </Col>
       </Row>
 
-      <Table className="text-center" bordered responsive>
+      <Table className="text-center mb-3" bordered responsive>
         <thead>
           <tr>
             <th>Tender Title</th>
@@ -211,7 +231,12 @@ const TenderManagement = () => {
               <td>{tender.status}</td>
               <td>{tender.submissionDeadline.toLocaleDateString()}</td>
               <td>
-                <Button variant="outline-primary" size="sm" className="me-2" onClick={() => handleEdit(tender)}>
+                <Button
+                  variant="outline-primary"
+                  size="sm"
+                  className="me-2"
+                  onClick={() => handleEdit(tender)}
+                >
                   Edit
                 </Button>
               </td>
@@ -221,14 +246,19 @@ const TenderManagement = () => {
       </Table>
 
       <div className="text-center">
-        <Button className="mt-3 $primary-color " onClick={() => setShowForm(true)}>
+        <Button
+          className="mt-3 $primary-color "
+          onClick={() => setShowForm(true)}
+        >
           Create New Tender
         </Button>
       </div>
 
       <Modal show={showForm} onHide={() => setShowForm(false)} centered>
         <Modal.Header closeButton>
-          <Modal.Title>{editingTender ? 'Edit Tender' : 'Create New Tender'}</Modal.Title>
+          <Modal.Title>
+            {editingTender ? "Edit Tender" : "Create New Tender"}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleFormSubmit}>
@@ -236,13 +266,27 @@ const TenderManagement = () => {
               <Col md={6}>
                 <Form.Group className="mb-3">
                   <Form.Label>Tender Title</Form.Label>
-                  <Form.Control  type="text" name="title" placeholder='Tender Title' value={formValues.title} onChange={handleInputChange} required />
+                  <Form.Control
+                    type="text"
+                    name="title"
+                    placeholder="Tender Title"
+                    value={formValues.title}
+                    onChange={handleInputChange}
+                    required
+                  />
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group className="mb-3">
                   <Form.Label>Reference Number</Form.Label>
-                  <Form.Control type="text" name="refNumber" placeholder='Reference Number' value={formValues.refNumber} onChange={handleInputChange} required />
+                  <Form.Control
+                    type="text"
+                    name="refNumber"
+                    placeholder="Reference Number"
+                    value={formValues.refNumber}
+                    onChange={handleInputChange}
+                    required
+                  />
                 </Form.Group>
               </Col>
             </Row>
@@ -250,7 +294,12 @@ const TenderManagement = () => {
               <Col md={6}>
                 <Form.Group className="mb-3">
                   <Form.Label>Type</Form.Label>
-                  <Form.Control as="select" name="type" value={formValues.type} onChange={handleInputChange}>
+                  <Form.Control
+                    as="select"
+                    name="type"
+                    value={formValues.type}
+                    onChange={handleInputChange}
+                  >
                     {types.map((type) => (
                       <option key={type} value={type}>
                         {type}
@@ -262,7 +311,12 @@ const TenderManagement = () => {
               <Col md={6}>
                 <Form.Group className="mb-3">
                   <Form.Label>Status</Form.Label>
-                  <Form.Control as="select" name="status" value={formValues.status} onChange={handleInputChange}>
+                  <Form.Control
+                    as="select"
+                    name="status"
+                    value={formValues.status}
+                    onChange={handleInputChange}
+                  >
                     {statuses.map((status) => (
                       <option key={status} value={status}>
                         {status}
@@ -274,9 +328,14 @@ const TenderManagement = () => {
             </Row>
             <Row>
               <Col md={6}>
-                <Form.Group className="mb-3" style={{ marginRight: '-3px' }}>
+                <Form.Group className="mb-3" style={{ marginRight: "-3px" }}>
                   <Form.Label>Category</Form.Label>
-                  <Form.Control as="select" name="category" value={formValues.category} onChange={handleInputChange}>
+                  <Form.Control
+                    as="select"
+                    name="category"
+                    value={formValues.category}
+                    onChange={handleInputChange}
+                  >
                     <option value="">Select Category</option>
                     {categories.map((category) => (
                       <option key={category} value={category}>
@@ -292,7 +351,9 @@ const TenderManagement = () => {
                   <br></br>
                   <DatePicker
                     selected={formValues.submissionDeadline}
-                    onChange={(date) => setFormValues({ ...formValues, submissionDeadline: date })}
+                    onChange={(date) =>
+                      setFormValues({ ...formValues, submissionDeadline: date })
+                    }
                     dateFormat="dd/MM/yyyy"
                     className="form-control PickDateLg"
                   />
@@ -301,11 +362,16 @@ const TenderManagement = () => {
             </Row>
             <Form.Group className="mb-3">
               <Form.Label>Description</Form.Label>
-              <Form.Control as="textarea" name="description" value={formValues.description} onChange={handleInputChange} />
+              <Form.Control
+                as="textarea"
+                name="description"
+                value={formValues.description}
+                onChange={handleInputChange}
+              />
             </Form.Group>
             <div className="text-center">
               <Button type="submit" className="$primary-color">
-                {editingTender ? 'Update Tender' : 'Create Tender'}
+                {editingTender ? "Update Tender" : "Create Tender"}
               </Button>
             </div>
           </Form>

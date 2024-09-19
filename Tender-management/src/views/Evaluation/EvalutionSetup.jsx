@@ -79,7 +79,7 @@ const EvaluationCriteria = () => {
               </Form.Control>
             </Form.Group>
           </Col>
-          <Col>
+          <Col sm={1}>
             <Form.Group controlId="weight" className="mb-3">
               <Form.Label>Weight (%)</Form.Label>
               <Form.Control type="number" placeholder="Enter Weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
@@ -97,9 +97,9 @@ const EvaluationCriteria = () => {
               </Form.Control>
             </Form.Group>
           </Col>
-          <Col>
+          <Col sm={1}>
             <Form.Group controlId="minScore" className="mb-3">
-              <Form.Label>Minimum Acceptable Score</Form.Label>
+              <Form.Label>Minimum Acceptable </Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Enter Minimum Acceptable Score"
@@ -119,9 +119,11 @@ const EvaluationCriteria = () => {
             onChange={(e) => setDescription(e.target.value)}
           />
         </Form.Group>
+        <div className='text-center'>
         <Button variant="primary" onClick={handleAddCriterion}>
           Add Criterion
         </Button>
+        </div>
       </Form>
 
       <h3 className="mt-4">Criteria List</h3>
