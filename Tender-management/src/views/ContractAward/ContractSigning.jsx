@@ -48,7 +48,7 @@ function ContractSigning() {
           </Col>
         </Row>
         <div className="text-center">
-          <Button className="mb-3">Sign Contract </Button>
+          <Button>Sign Contract </Button>
           <Button>Finalize Contract</Button>
         </div>
       </Container>

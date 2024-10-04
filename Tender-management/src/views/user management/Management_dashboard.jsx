@@ -91,7 +91,7 @@ const UserMgDashboard = () => {
   return (
     <Container className=" p-3 bg-white shadow-sm text-center">
       <h2 className="page-title mb-4">User Management</h2>
-      <div className="mb-4 mx-4">
+      <div className="mb-4 text-center mx-5">
         <Form.Group>
           <FormControl
             placeholder="Search users"

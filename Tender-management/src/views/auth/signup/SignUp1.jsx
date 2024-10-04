@@ -33,12 +33,6 @@ const SignUp1 = () => {
                   <div className="input-group mb-4">
                     <input type="password" className="form-control" placeholder="Password" />
                   </div>
-                  <div className="input-group mb-4">
-                    <input type="password" className="form-control" placeholder="Password" />
-                  </div>
-                  <div className="input-group mb-4">
-                    <input type="password" className="form-control" placeholder="Password" />
-                  </div>
                   <div className="form-check  text-start mb-4 mt-2">
                     <input type="checkbox" className="form-check-input" id="customCheck1" defaultChecked={false} />
                     <label className="form-check-label" htmlFor="customCheck1">

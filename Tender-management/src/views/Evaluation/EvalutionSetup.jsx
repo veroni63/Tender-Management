@@ -79,7 +79,7 @@ const EvaluationCriteria = () => {
               </Form.Control>
             </Form.Group>
           </Col>
-          <Col sm={1}>
+          <Col>
             <Form.Group controlId="weight" className="mb-3">
               <Form.Label>Weight (%)</Form.Label>
               <Form.Control type="number" placeholder="Enter Weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
@@ -97,7 +97,7 @@ const EvaluationCriteria = () => {
               </Form.Control>
             </Form.Group>
           </Col>
-          <Col sm={1}>
+          <Col >
             <Form.Group controlId="minScore" className="mb-3">
               <Form.Label>Minimum Acceptable </Form.Label>
               <Form.Control

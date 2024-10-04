@@ -82,7 +82,7 @@ function ContractGeneration() {
           </Form.Group>
         </Row>
         <div className="text-center">
-          <Button className="mb-3"> Generate Contract Draft </Button>
+          <Button > Generate Contract Draft </Button>
           <Button>Send for Vendor Review</Button>
         </div>
       </Container>
